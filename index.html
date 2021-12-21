@@ -29,10 +29,10 @@
     <script type="text/javascript" src="./build/js/showdown.js"></script>
     <script type="text/javascript" src="./build/js/showdown-prettify.min.js"></script>
     <script type="text/javascript" src="./build/js/prettify/run_prettify.js"></script>
-    
+
     <!-- previous version of ace caused import conflict -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js" type="text/javascript" charset="utf-8"></script>
-    
+
     <script type="text/javascript" src="build/js/dld4e-connections.js"></script>
     <script type="text/javascript" src="build/js/dld4e-draw.js"></script>
     <script type="text/javascript" src="build/js/dld4e-gridlines.js"></script>
@@ -41,7 +41,7 @@
     <script type="text/javascript" src="build/js/dld4e-title.js"></script>
     <script type="text/javascript" src="build/js/dld4e-notes.js"></script>
     <script type="text/javascript" src="build/js/dld4e-process.js"></script>
-    
+
     <script type="text/javascript" src="build/js/app.js"></script>
     <script type="text/javascript" src="build/js/saveSvgAsPng.js"></script>
 
@@ -97,8 +97,11 @@
                 Examples<span class="caret"></span>
               </button>
               <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="examples">
+                <li role="menuitem" ng-click="example('gns-conf-string1.yaml')"><a href="javascript:void(0);">GNS3 String of three nodes</a></li>
+                <li role="menuitem" ng-click="example('elk_demo_topology.yaml')"><a href="javascript:void(0);">PWB ELK Demo1</a></li>
                 <li role="menuitem" ng-click="example('coffee.yaml')"><a href="javascript:void(0);">Coffee Colors</a></li>
                 <li role="menuitem" ng-click="example('curves.yaml')"><a href="javascript:void(0);">Curves</a></li>
+                <li role="menuitem" ng-click="example('curves2.yaml')"><a href="javascript:void(0);">Curves2</a></li>
                 <li role="menuitem" ng-click="example('groups.yaml')"><a href="javascript:void(0);">Groups</a></li>
                 <li role="menuitem" ng-click="example('group connections.yaml')"><a href="javascript:void(0);">Group connections</a></li>
                 <li role="menuitem" ng-click="example('labels.yaml')"><a href="javascript:void(0);">Labels</a></li>
@@ -185,7 +188,7 @@ function mainController($scope, $http, $sce, $log, $window, $location, $timeout,
       })
     })
   } else {
-    $scope.url = 'examples/NTP.yaml'
+    $scope.url = 'examples/elk_demo_topology.yaml'
     $scope.state = "Save";
     $http.get($scope.url)
          .then(function(res){
