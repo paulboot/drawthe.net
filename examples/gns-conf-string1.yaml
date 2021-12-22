@@ -32,11 +32,11 @@ cisco: &cisco
 r: &r
   <<: *cisco
   icon: "router"
-  gns3_template: "Cisco IOSv 15.9(3)M3"
+  gns3_template: "Cisco CSR1000v 17.3.2"
 l2: &l2
   <<: *cisco
   icon: "layer3switch"
-  gns3_template: "Cisco IOSvL2 15.2(20200924:215240)"
+  gns3_template: "Cisco CSR1000v 17.3.2"
 icons:
   R1: {<<: *r, x: 0, y: 8}
   R2: {<<: *r, x: 1, y: 8}
