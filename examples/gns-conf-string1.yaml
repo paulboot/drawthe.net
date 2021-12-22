@@ -36,7 +36,7 @@ r: &r
 l2: &l2
   <<: *cisco
   icon: "layer3switch"
-  gns3_template: "Cisco CSR1000v 17.3.2"
+  gns3_template: "Cisco IOSvL2 15.2(20200924:215240)"
 icons:
   R1: {<<: *r, x: 0, y: 8}
   R2: {<<: *r, x: 1, y: 8}
@@ -62,12 +62,12 @@ connectionMgmtProperties: &connectionMgmtProperties
   stroke: "lightslategrey"
   strokeDashArray: "5,5"
 connections:
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/0, R1:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/1, R2:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/2, R3:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/3, R4:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/0, R5:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/1, R6:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/2, R7:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/3, R8:Gi0/0] }
-  - { <<: *connectionMainProperties, endpoints: [L2:Gi2/0, R9:Gi0/0] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/0, R1:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/1, R2:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/2, R3:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi0/3, R4:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/0, R5:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/1, R6:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/2, R7:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi1/3, R8:Gi1] }
+  - { <<: *connectionMainProperties, endpoints: [L2:Gi2/0, R9:Gi1] }
