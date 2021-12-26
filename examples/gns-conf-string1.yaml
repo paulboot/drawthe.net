@@ -18,7 +18,7 @@ title:
   # fill: none
   stroke: "lightgrey"
   type: "bar"
-  version: 1.02
+  version: 1.03
 # Define per group default, used later, can be nested
 cisco: &cisco
   stroke: "none"
@@ -29,15 +29,22 @@ cisco: &cisco
   iconFamily: "cisco"
   fill: "none"         # do not fill in the background of an icon
   preserveWhite: "true"
-r: &r
-  <<: *cisco
-  icon: "router"
-  gns3_template: "Cisco CSR1000v 17.3.2"
 l2: &l2
   <<: *cisco
   icon: "layer3switch"
   gns3_template: "Cisco IOSvL2 15.2(20200924:215240)"
+oob_stations: &oob_stations
+  <<: *cisco
+  icon: "workstation"
+  iconFill: "#808080"
+  iconStroke: "#262626"
+r: &r
+  <<: *cisco
+  icon: "router"
+  gns3_template: "Cisco CSR1000v 17.3.2"
 icons:
+  L2: {<<: *l2, x: 4, y: 6}
+  cloud-1: {<<: *oob_stations, icon: "webbrowser", gns3_template: "Cloud", x: 6, y: 6}
   R1: {<<: *r, x: 0, y: 8}
   R2: {<<: *r, x: 1, y: 8}
   R3: {<<: *r, x: 2, y: 8}
@@ -47,7 +54,6 @@ icons:
   R7: {<<: *r, x: 6, y: 8}
   R8: {<<: *r, x: 7, y: 8}
   R9: {<<: *r, x: 8, y: 8}
-  L2: {<<: *l2, x: 4, y: 6}
 group: &group
   fill: "none"
   color: darkslategray
@@ -62,6 +68,7 @@ connectionMgmtProperties: &connectionMgmtProperties
   stroke: "lightslategrey"
   strokeDashArray: "5,5"
 connections:
+  - { <<: *connectionMgmtProperties, endpoints: [L2:Gi3/3, cloud-1:eth1] }
   - { <<: *connectionMainProperties, endpoints: [L2:Gi0/0, R1:Gi1] }
   - { <<: *connectionMainProperties, endpoints: [L2:Gi0/1, R2:Gi1] }
   - { <<: *connectionMainProperties, endpoints: [L2:Gi0/2, R3:Gi1] }
