@@ -44,7 +44,7 @@ r: &r
   gns3_template: "Cisco CSR1000v 17.3.2"
 icons:
   L2: {<<: *l2, x: 4, y: 6}
-  cloud-1: {<<: *oob_stations, icon: "webbrowser", gns3_template: "Cloud", x: 6, y: 6}
+  nat-1: {<<: *oob_stations, icon: "webbrowser", gns3_template: "NAT", x: 6, y: 6}
   R1: {<<: *r, x: 0, y: 8}
   R2: {<<: *r, x: 1, y: 8}
   R3: {<<: *r, x: 2, y: 8}
@@ -68,7 +68,7 @@ connectionMgmtProperties: &connectionMgmtProperties
   stroke: "lightslategrey"
   strokeDashArray: "5,5"
 connections:
-  - { <<: *connectionMgmtProperties, endpoints: [L2:Gi3/3, cloud-1:eth1] }
+  - { <<: *connectionMgmtProperties, endpoints: [L2:Gi3/3, nat-1:nat0] }
   - { <<: *connectionMainProperties, endpoints: [L2:Gi0/0, R1:Gi1] }
   - { <<: *connectionMainProperties, endpoints: [L2:Gi0/1, R2:Gi1] }
   - { <<: *connectionMainProperties, endpoints: [L2:Gi0/2, R3:Gi1] }
