@@ -54,6 +54,8 @@ icons:
   R7: {<<: *r, x: 6, y: 8}
   R8: {<<: *r, x: 7, y: 8}
   R9: {<<: *r, x: 8, y: 8}
+  H1: {<<: *oob_stations, gns3_template: "Ubuntu 20.04", x: 7, y: 7}
+  H2: {<<: *oob_stations, gns3_template: "Ubuntu 20.04", x: 8, y: 7}
 group: &group
   fill: "none"
   color: darkslategray
